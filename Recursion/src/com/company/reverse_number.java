@@ -2,14 +2,21 @@ package com.company;
 
 public class reverse_number {
     public static void main(String[] args) {
-      reverse(523);
+     int n= reverse(4456789);
+        System.out.println(n);
+
     }
-    static void reverse(int n){
-        if(n==0){
-            return;
+    static int  reverse(int n){
+
+
+        if(n%10==n){
+            return n;
         }
-        System.out.print(n%10);
-        reverse(n/10);
+       int count=(int)(Math.log10(n))+1;//to count the number of digits
+
+        int f=(int)(Math.pow(10,count-1));
+
+        return n%10*f+reverse(n/10);
 
 
     }
